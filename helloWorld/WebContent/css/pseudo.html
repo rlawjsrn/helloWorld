@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/pseudo.html</title>
+    <style>
+        /*가상 클래스*/
+        a{
+            font-family: Arial, Helvetica, sans-serif;
+            display: block; /*빈공간 채우는 박스.(inline을 쓰면 줄바꿈과 빈공간 둘 다 실행)*/
+            width: 200px;
+            border: 2px solid red;
+        }
+        a:link {
+            color: blue; 
+            text-decoration: underline;
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover{
+            text-decoration: overline;
+        }
+        a:active{
+            background-color: sandybrown;
+        }
+
+        div{
+            display: inline-block;
+        }
+
+        div.d1:hover {
+            background-color: yellow;
+            width: 300px;
+            transition: all 1.5s linear 0.5s;
+        }
+
+        div.d2:hover {
+            background-color: skyblue;
+        }
+        
+        div.d1 {border: 1px dashed red; width: 400px; padding: 5px;}
+        /*가상 클래스*/
+        div.d1:hover{background-color: yellow;}
+
+        div.d2{border: 1px dashed green; width: 400px; padding: 5px;}
+        /*가상 클래스*/
+        div.d2:hover{background-color: green;}
+    </style>
+</head>
+
+<body>
+    <h2>Pseudo Class</h2>
+    <p><a href="http://www.w3.org" target="_blank">W3C 사이트입니다</a>:마우스 이벤트에 따른 링크변화</p>
+    <div class="d1">
+        <h3>가상 클래스 1 영역</h3>
+        마우스 위치에 따른 박스 스타일 변화
+    </div>
+    <div class="d2">
+        <h3>가상 클래스 2 영역</h3>
+        마우스 위치에 따른 박스 스타일 변화
+    </div>
+
+</body>
+
+</html>

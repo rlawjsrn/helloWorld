@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/boxmodel.html</title>
+    <style>
+        div{
+            border: 2px dotted red;
+        }
+
+        div.inner{ /* padding(단축어) 1개값:상하좌우 / 2개값:상하,좌우 / 3개값:상,좌우,하 / 4개값(시계방향): 상,우,하,좌 */
+            padding: 10px 20px 10px 20px;
+            margin: 10px 20px 10px;
+            border-radius: 10px;
+            border-style: solid;
+            border-collapse: unset;
+
+        }
+
+        div.outer{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="inner"> Content</div>
+    </div>
+
+</body>
+
+</html>
