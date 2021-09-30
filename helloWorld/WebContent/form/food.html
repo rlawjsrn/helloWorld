@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+img{
+  float: left;
+  width:165px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,9 +30,9 @@ header {
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
+  width: 20%;
+  height: 350px; /* only for demonstration, should be removed */
+  background: rgb(241, 240, 222);
   padding: 20px;
 }
 
@@ -40,9 +45,9 @@ nav ul {
 article {
   float: left;
   padding: 20px;
-  width: 70%;
+  width: 80%;
   background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
+  height: 350px; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */
@@ -54,7 +59,7 @@ section::after {
 
 /* Style the footer */
 footer {
-  background-color: #777;
+  background-color: #036635;
   padding: 10px;
   text-align: center;
   color: white;
@@ -87,22 +92,22 @@ footer {
 <article>
     <table>
         <tr>
-            <td colspan="1">
-                <h1>Food</h1>
+          <h1>Food</h1>
+            <td>
                 <figure >
-                    <img style="width: 160px;" src="../img/f1.jpg" alt="no img">
+                    <img src="../img/f1.jpg" alt="no img">
                     <figcaption style="text-align: center;">연유 밀크모닝</figcaption>                    
                 </figure>
             </td>
             <td>
                 <figure>
-                    <img style="width: 160px; " src="../img/f2.jpg" alt="no img">
+                    <img  src="../img/f2.jpg" alt="no img">
                     <figcaption style="text-align: center;">우유 품은 초콜릿 크루아상</figcaption>                    
                 </figure>
             </td>
             <td>
                 <figure>
-                    <img style="width: 160px;" src="../img/f3.jpg" alt="no img">
+                    <img  src="../img/f3.jpg" alt="no img">
                     <figcaption style="text-align: center;">블루베리 쿠키 치즈 케이크</figcaption>                    
                 </figure>
             </td>
@@ -112,4 +117,7 @@ footer {
     </table>
 </article>
 </section>
+<footer>
+  <p>STORE</p>
+</footer>
 </body>
