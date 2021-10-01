@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array.html</title>
+</head>
+
+<body>
+
+    <input type="text" id="inputValue" value="test">
+    <p>test</p>
+    <button id="btn" onclick="addArray()">추가하기</button>
+    <button onclick="removeArray()">제거하기</button>
+    <ul id="list">
+
+    </ul>
+    <script>
+        const inputAry = [];
+
+        // inputAry[2] = null; // a, b, d, e, f
+        // inputAry.splice(2, 2);
+
+        
+
+        function showList() {
+            //화면에 추가
+            let ulTag = document.getElementById('list')
+            let tag = '';
+            for (i = 0; i < inputAry.length; i++) {
+                tag += '<li>' + inputAry[i] + '</li>';
+            }
+            ulTag.innerHTML = tag; //<ul><li>test</li><li>hello</li></ul>
+        }
+
+        function removeArray() {
+            inputAry.splice(1,1); //pop: 아래에서부터 제거  shift:위에서부터 제거
+            showList();
+        }
+
+        function addArray() {
+            let input = document.getElementById('inputValue');
+            let iValue = input.value;
+            //배열추가
+            //0, null, "" => false
+            //20, -9,"  ", "hello" => true
+
+            if (!iValue) {
+                alert('값을 입력하세요');
+                return;
+            } //비정상적인 데이터는 거르겠다.
+
+            inputAry.unshift(iValue); //push: 추가한 항목을 밑으로 나열  unshift: 추가한 항목을 위로 나열
+            showList();
+            input.value = '';
+            input.focus();
+            console.log(inputAry);
+        }
+
+       
+    </script>
+</body>
+
+</html>
