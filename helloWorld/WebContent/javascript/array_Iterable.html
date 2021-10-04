@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/array_iterable.html</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [30, 25, 4, 100, 10];
+        let sum = 0;
+        numbers.forEach(function (obj, idx, ary) {
+            if (idx % 2 == 0) //홀수번째 위치 값을 저장.
+                sum = sum + obj;
+        });
+        console.log(`합계: ${sum}`);
+
+        //이름 리스트 나타내기
+        // const names = ['한동일', '유상우', '정석진', '박준형'];
+        // document.write('<ul>');
+        // names.forEach(function (obj) { // 첫번째 매개값
+        //     document.write('<li>' + obj + '</li>');
+        // });
+        // document.write('</ul>')
+
+        //이름 리스트 나타내기_1 (function이용) 결과는 위와 같다.
+        const names = ['한동일', '유상우', '정석진', '박준형'];
+        document.write('<ul>');
+        names.forEach(callBackFnc);
+        document.write('</ul>')
+
+        function callBackFnc(obj) {
+            document.write('<li>' + obj + '</li>');
+        }
+
+        const persons = names.map(function (obj, idx, ary) {
+            const score = Math.floor(Math.random() * 100) //floor:나눈 나머지의 소수점을 버림해줌
+            const person = {
+                name: obj,
+                score: score
+            };
+            return person;
+        }); //mapping 
+        console.log(persons);
+
+        const person50 = persons.filter(function (obj, idx, ary) {
+            return obj.score > 50;
+        }); //filtering
+        console.log(person50);
+    </script>
+</body>
+
+</html>
