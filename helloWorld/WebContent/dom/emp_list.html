@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/emp_list.html</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        div#show {
+            width: 60%;
+            float: left;
+        }
+
+        div#aside {
+            width: 28%;
+            float: left;
+            border: 2px dotted firebrick;
+            padding: 5px;
+        }
+
+        #aside label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        div#show {
+            display: inline-block;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="show">
+        <!-- <table border="1">
+            <tr>
+                <th>id</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>email</th>
+                <th>gender</th>
+                <th>ip_address</th>
+            </tr>
+        </table> -->
+    </div>
+
+    <div id="aside">
+        <div class="id"><label for="empId">ID</label><input type="text" id="empId"></div>
+        <div class="fname"><label for="empId">FName</label><input type="text" id="firstName"></div>
+        <div class="lname"><label for="empId">LName</label><input type="text" id="lastName"></div>
+        <div class="email"><label for="empId">Email</label><input type="text" id="email"></div>
+        <div class="gender"><label for="empId">Gender</label><input type="text" id="gender"></div>
+        <div class="address"><label for="empId">IP</label><input type="text" id="address"></div>
+        <div class="btn"> <button id="btn">변경</button></div> <div class="btn1"> <button id="btn1">삭제</button></div>
+    </div>
+
+
+    <script>
+        //변경
+        document.getElementById('btn').onclick = function () {
+            let empId = document.getElementById('empId').value;
+            let fname = document.getElementById('firstName').value;
+            let lname = document.getElementById('lastName').value;
+            let email = document.getElementById('email').value;
+            let gender = document.getElementById('gender').value;
+            let ip = document.getElementById('address').value;
+            //console.log(empId);
+
+            let findTr = document.getElementById(empId);
+            console.log(findTr);
+
+            findTr.childNodes[1].firstChild.nodeValue = fname;
+            findTr.childNodes[2].firstChild.nodeValue = lname;
+            findTr.childNodes[3].firstChild.nodeValue = email;
+            findTr.childNodes[4].firstChild.nodeValue = gender;
+            findTr.childNodes[5].firstChild.nodeValue = ip;
+
+        }
+
+        //삭제
+        document.getElementById('btn1').onclick = function () {
+            let empId = document.getElementById('empId').value;
+            let fname = document.getElementById('firstName').value;
+            console.log(empId);
+
+            let deleteTr = document.getElementById(empId);
+            console.log(deleteTr);
+            deleteTr.childNodes[1].firstChild.nodeValue = fname;
+            
+            deleteTr.remove();
+        }
+
+
+
+        let rawData = `[{
+                "id": 1,
+                "first_name": "Teena",
+                "last_name": "Roddick",
+                "email": "troddick0@photobucket.com",
+                "gender": "Polygender",
+                "ip_address": "98.108.79.169"
+            },
+            {
+                "id": 2,
+                "first_name": "Rosa",
+                "last_name": "Heinritz",
+                "email": "rheinritz1@symantec.com",
+                "gender": "Bigender",
+                "ip_address": "22.86.190.179"
+            },
+            {
+                "id": 3,
+                "first_name": "Jewelle",
+                "last_name": "Baudinot",
+                "email": "jbaudinot2@skype.com",
+                "gender": "Polygender",
+                "ip_address": "13.235.92.170"
+            },
+            {
+                "id": 4,
+                "first_name": "Madalyn",
+                "last_name": "Christon",
+                "email": "mchriston3@digg.com",
+                "gender": "Non-binary",
+                "ip_address": "128.189.139.228"
+            },
+            {
+                "id": 5,
+                "first_name": "Valentin",
+                "last_name": "Newham",
+                "email": "vnewham4@cloudflare.com",
+                "gender": "Agender",
+                "ip_address": "117.205.100.183"
+            }]`;
+
+        let data = JSON.parse(rawData);
+        console.log(data);
+        //const employees = data;
+
+        let table, tbody, tr, td, text;
+        table = document.createElement('table');
+        table.setAttribute('border', '1');
+        tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+
+        //title부분
+        let title = ['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address'];
+        tr = document.createElement('tr');
+        tbody.appendChild(tr);
+
+        for (let field in data[0]) {
+            td = document.createElement('th');
+            text = document.createTextNode(field.replace('_', ' ').toUpperCase());
+            td.appendChild(text);
+            tr.appendChild(td);
+            
+        }
+        //Data부분
+        for (let row of data) {
+            tr = document.createElement('tr');
+            tr.setAttribute('id', row.id);
+            tr.onmouseover = function () {
+                //console.log(this.childNodes[0].firstChild);
+                let empId = this.childNodes[0].firstChild.nodeValue;
+                let fname = this.childNodes[1].firstChild.nodeValue;
+                let lname = this.childNodes[2].firstChild.nodeValue;
+                let email = this.childNodes[3].firstChild.nodeValue;
+                let gender = this.childNodes[4].firstChild.nodeValue;
+                let ip = this.childNodes[5].firstChild.nodeValue;
+
+                document.getElementById('empId').value = empId;
+                document.getElementById('firstName').value = fname;
+                document.getElementById('lastName').value = lname;
+                document.getElementById('email').value = email;
+                document.getElementById('gender').value = gender;
+                document.getElementById('address').value = ip;
+
+            }
+            tbody.appendChild(tr);
+            for (let field in row) {
+                td = document.createElement('td');
+                text = document.createTextNode(row[field]);
+                td.appendChild(text);
+                tr.appendChild(td);
+            }
+        }
+
+        let h1 = document.createElement('h3');
+        text = document.createTextNode('<사원리스트>');
+        h1.appendChild(text);
+        h1.style.textAlign = 'center';
+
+
+
+        let show = document.getElementById('show')
+            //.appendChild(h1)
+            .appendChild(table);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript/태그연습.html</title>
+</head>
+
+<body>
+    <script>
+        let form = document.createElement('form');
+        form.action = 'post.jsp';
+        form.name = 'frm';
+        
+        let label = document.createElement('label');
+        label.setAttribute('for','emp') ;
+        let text = document.createTextNode('아이디');
+        label.appendChild(text);
+
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'emp';
+        input.id = 'emp';
+
+
+        form.appendChild(label);
+        document.getElementsByTagName('body')[0].appendChild(form);
+        
+        
+console.log(label);
+
+    </script>
+</body>
+
+</html>
