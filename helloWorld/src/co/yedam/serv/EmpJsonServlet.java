@@ -25,22 +25,27 @@ public class EmpJsonServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//response.getWriter().append("Served at: ").append(request.getContextPath()).append("Hong");
-		PrintWriter out = response.getWriter();
-		EmpDAO dao = new EmpDAO();
-		List<Employee> list = dao.getEmpList();
+		PrintWriter out = response.getWriter();  //출력메서드
+		EmpDAO dao = new EmpDAO();  //초기화된 EmpDAO 클래스를 가져와 사용하겠다. 여기서는 EmpDAO 클래스를 dao로 부르겠다. 
+		
+		//db에서 데이터를 가져오기
+		List<Employee> list = dao.getEmpList(); //dao에 있는 getEmpList메서드를 가져온 뒤, list에 담겠다.
 		// {"name":"Hongkildong", "age":15, "score": 80}
 		//out.println("{\"name\":\"Hongkildong\", \"age\":15, \"score\": 80}");
 		// {"empId":"?","lname":"?","email":"?","hireDate":"?","job":"?"}
-		int cnt = 0, lastCnt = list.size();
+		int cnt = 0; 
+		int lastCnt = list.size(); //list 배열의 길이 = 5
+		
+		//db에서 가져온 데이터를 json 형식으로 만들기
 		out.print("[");
-		for (Employee emp : list) {
-			out.print("{\"empId\":\""+emp.getEmployeeId()
-					+"\",\"lname\":\""+emp.getLastName()
-					+"\",\"email\":\""+emp.getEmail()
-					+"\",\"hireDate\":\""+emp.getHireDate()
-					+"\",\"job\":\""+emp.getJobId()+"\"}");
+		for (Employee employee : list) { //for(배열 안 요소의 값을 지칭하는애 : 돌리고자 하는 배열) 배열을 for문 돌리는 방식
+			out.print("{\"empId\":\""+employee.getEmployeeId()
+					+"\",\"lname\":\""+employee.getLastName()
+					+"\",\"email\":\""+employee.getEmail()
+					+"\",\"hireDate\":\""+employee.getHireDate()
+					+"\",\"job\":\""+employee.getJobId()+"\"}");
 			// , 마지막 건(,)
-			cnt++;
+			cnt++; //cnt=1, 2...5
 			if(cnt != lastCnt) {
 				out.print(",");
 			}

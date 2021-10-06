@@ -5,16 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmpDAO extends DAO {
-
-   public List<Employee> getEmpList() {
+	
+	    //메소드의 반환값 타입 - 메소드 이름()
+   public List<Employee> getEmpList() { //db에서 가져온 데이터를 list화 시키기
       connect();
-      List<Employee> list = new ArrayList<>();
+      
+      List<Employee> list = new ArrayList<>(); //배열 틀을 만들겠다.
 
       String sql = "select * from empl_demo order by 1 desc";
+      
       try {
          stmt = conn.createStatement();
-         rs = stmt.executeQuery(sql);
-         while (rs.next()) {
+         rs = stmt.executeQuery(sql); //executeQuery = sql 수행 메소드
+         while (rs.next()) { // query결과값 있는만큼 돌린다.
             Employee emp = new Employee();
             emp.setEmployeeId(rs.getInt("employee_id"));
             emp.setLastName(rs.getString("last_name"));
@@ -29,7 +32,7 @@ public class EmpDAO extends DAO {
       } finally {
          disconnect();
       }
-      return list;
+      return list; //return '값'을 반환해라. 이 메소드를 호출한 애한테 값을 준다.
    }
 
    public boolean insertEmp(Employee emp) {

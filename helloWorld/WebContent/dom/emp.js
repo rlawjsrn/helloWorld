@@ -35,6 +35,7 @@ let xhtp = new XMLHttpRequest();
 			for (let obj of data) {
 				tr = document.createElement('tr');
 				table.appendChild(tr);
+				
 				for (let field in data[0]) {
 					td = document.createElement('td');
 					txt = document.createTextNode(obj[field]);
