@@ -30,6 +30,7 @@ div {
 		<div class="field">
 			직무: <input type="text" id="job" value="IT_PROG">
 		</div>
+		
 		<button id="addBtn">등록</button>
 	</div>
 	<div id="show"></div>
@@ -45,9 +46,10 @@ div {
 			let email = document.getElementById('email').value;
 			let hire = document.getElementById('hire').value;
 			let job = document.getElementById('job').value;
+			
 
 			let param = 'id=' + eId + '&name=' + name + '&email=' + email
-					+ '&hire=' + hire + '&job=' + job;
+					+ '&hire=' + hire + '&job=' + job ;
 			let xhtp = new XMLHttpRequest();
 			xhtp.onload = function() {
 				let data = JSON.parse(xhtp.responseText);
