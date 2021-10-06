@@ -1,7 +1,7 @@
 package co.yedam.common;
-
+//2사원
 public class Employee {
-	private int employeeId;
+	private int employeeId; 
 	private String lastName;
 	private String email;
 	private String jobId;
