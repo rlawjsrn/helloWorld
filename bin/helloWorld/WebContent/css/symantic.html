@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/symantic.html</title>
+    <style>
+      * {
+           box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header:first-child {
+            background-color: lightblue;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+        }
+
+        nav {
+            float: left;
+            width: 29%;
+            height: 500px;
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        section {
+            float: left;
+            width: 40%;
+            height: 500px;
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin: 10px 10px ;
+
+            
+        }
+
+        aside {
+            float: left;
+            width: 28%;
+            height: 500px;
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        section > header{
+            float: left;
+            width: 99%;
+            padding: 10px;
+            background-color: rgb(194, 205, 209);
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin: 5px;
+        
+        }
+
+        section > article{
+            float: left;
+            width: 99%;
+            padding: 70px;
+            background-color: rgb(194, 205, 209);
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin: 3px;
+        }
+
+        section > footer{
+            float: left;
+            width: 99%;
+            padding: 10px;
+            background-color: rgb(194, 205, 209);
+            text-align: center;
+            border-radius: 5px;
+            border-style: solid;
+            margin: 3px;
+        }
+
+        footer {
+            float: left;
+            width: 100%;
+            padding: 20px;
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 3px;
+            border-style: solid;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <header>
+    <h2>&lt; header &gt; </h2>
+    </header>
+    </div>
+    
+    <nav>
+        <h2>&lt; nav &gt;</h2>
+    </nav>
+
+    <section>
+        <h2>&lt; section &gt;</h2>
+            <header>
+                <h2>&lt; header &gt; </h2>
+            </header>
+
+            <article>
+                <h2>&lt; article &gt;</h2>
+            </article>
+
+            <footer>
+                <h2>&lt; footer &gt;</h2>
+            </footer>
+
+    </section>
+
+    <aside>
+        <h2>&lt; aside &gt;</h2>
+    </aside>
+    
+    <footer>
+        <h2>&lt; footer &gt;</h2>
+    </footer>
+    
+</body>
+
+</html>

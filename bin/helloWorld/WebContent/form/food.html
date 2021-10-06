@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>STARBUCKS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+img{
+  float: left;
+  width:165px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #036635;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 20%;
+  height: 350px; /* only for demonstration, should be removed */
+  background: rgb(241, 240, 222);
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background-color: #f1f1f1;
+  height: 350px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #036635;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <h3>STARBUCKS</h3>
+    </header>
+
+<section>
+    <nav>
+        <ul>
+            <li><a href="beverage.html">Beverage</a> </li>
+            <li><a href="food.html">Food</li>
+            <li><a href="product.html">product</li>
+        </ul>
+    </nav>
+
+<article>
+    <table>
+        <tr>
+          <h1>Food</h1>
+            <td>
+                <figure >
+                    <img src="../img/f1.jpg" alt="no img">
+                    <figcaption style="text-align: center;">연유 밀크모닝</figcaption>                    
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <img  src="../img/f2.jpg" alt="no img">
+                    <figcaption style="text-align: center;">우유 품은 초콜릿 크루아상</figcaption>                    
+                </figure>
+            </td>
+            <td>
+                <figure>
+                    <img  src="../img/f3.jpg" alt="no img">
+                    <figcaption style="text-align: center;">블루베리 쿠키 치즈 케이크</figcaption>                    
+                </figure>
+            </td>
+
+        </tr>
+
+    </table>
+</article>
+</section>
+<footer>
+  <p>STORE</p>
+</footer>
+</body>
