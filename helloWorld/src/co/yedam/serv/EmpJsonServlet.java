@@ -38,12 +38,12 @@ public class EmpJsonServlet extends HttpServlet {
 		
 		// 2. db에서 가져온 데이터를 json 형식으로 만들기
 		out.print("[");
-		for (Employee employee : list) { //for(배열 안 요소의 값을 지칭하는애 : 돌리고자 하는 배열) 배열을 for문 돌리는 방식
-			out.print("{\"empId\":\""+employee.getEmployeeId()
-					+"\",\"lname\":\""+employee.getLastName()
-					+"\",\"email\":\""+employee.getEmail()
-					+"\",\"hireDate\":\""+employee.getHireDate()
-					+"\",\"job\":\""+employee.getJobId()+"\"}");
+		for (Employee emp : list) { //for(배열 안 요소의 값을 지칭하는애 : 돌리고자 하는 배열) 배열을 for문 돌리는 방식
+			out.print("{\"empId\":\""+emp.getEmployeeId()
+					+"\",\"lname\":\""+emp.getLastName()
+					+"\",\"email\":\""+emp.getEmail()
+					+"\",\"hireDate\":\""+emp.getHireDate()
+					+"\",\"job\":\""+emp.getJobId()+"\"}");
 			// , 마지막 건(,)
 			cnt++; //cnt=1, 2...5
 			if(cnt != lastCnt) {

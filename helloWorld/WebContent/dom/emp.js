@@ -15,8 +15,6 @@ let xhtp = new XMLHttpRequest();
             let titles = ['empid','lname','email','hire','job','기능']
 			//타이틀 생성
         
-
-
 			tr = document.createElement('tr');
 			for (let title of titles) {
                 td = document.createElement('td');
